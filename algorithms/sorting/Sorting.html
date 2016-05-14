@@ -1,0 +1,432 @@
+
+<!-- saved from url=(0082)https://www.cs.cmu.edu/~adamchik/15-121/lectures/Sorting%20Algorithms/sorting.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><title> Sorting
+</title><style type="text/css"></style></head>
+<body text="#000000" bgcolor="#FFFFFF">
+
+<link rel="stylesheet" href="./Sorting_files/course.css" type="text/css">
+
+
+
+<center><h1><font color="green">Sorting</font></h1></center>
+
+<h2>Introduction</h2>
+<p>Sorting is ordering a list of objects. We can distinguish two types of sorting. If the number of objects is small enough to fits into the main memory, sorting is called <i>internal sorting</i>. If the number of objects is so large that some of them reside on external storage during the sort, it is called <i>external sorting</i>. In this chapter we consider the following internal sorting algorithms
+
+</p><ul>
+<li>Bucket sort
+</li><li>Bubble sort
+</li><li>Insertion sort
+</li><li>Selection sort
+</li><li>Heapsort
+</li><li>Mergesort
+</li></ul>
+
+
+
+<h2>O(n) algorithms</h2>
+<h3>Bucket Sort </h3>
+<p>Suppose we need to sort an array of positive integers {3,11,2,9,1,5}. A bucket sort works as follows: create an array of size 11. Then, go through the input array and place integer 3 into a second array at index 3, integer 11 at index 11 and so on. We will end up with a sorted list in the second array.
+
+
+</p><p>Suppose we are sorting a large number of local phone numbers, for example, all residential
+phone numbers in the 412 area code region (about 1 million) We sort the numbers without use of comparisons in the following way. Create an a bit array of size 10<sup>7</sup>. It takes about 1Mb. Set all bits to 0. For each phone number turn-on the bit indexed by that phone number. Finally, walk through the array and for each bit 1 record its index, which is a phone number.
+
+</p><p>We immediately see two drawbacks to this sorting algorithm. Firstly, we must know how to handle duplicates.  Secondly,  we must know the maximum value  in the unsorted array.. Thirdly, we must have enough memory - it may be impossible to declare an array large enough on some systems.
+
+</p><p>The first problem is solved by using linked lists, attached to each array index. All duplicates for that bucket will be stored in the list. Another possible solution is to have a counter. As an example let us sort <code> 3, 2, 4, 2, 3, 5</code>. We start with an array of 5 counters set to zero.
+</p><center>
+<table border="" bordercolor="" cellpadding="2">
+
+<tbody><tr align="CENTER">
+<td>&nbsp; 0 &nbsp;</td>
+<td>&nbsp; 1 &nbsp;</td>
+<td>&nbsp; 2 &nbsp;</td>
+<td>&nbsp; 3 &nbsp;</td>
+<td>&nbsp; 4 &nbsp;</td>
+<td>&nbsp; 5 &nbsp;</td>
+
+</tr>
+
+<tr align="CENTER">
+<td>&nbsp;0</td>
+<td>&nbsp;0</td>
+<td>&nbsp;0</td>
+<td>&nbsp;0</td>
+<td>&nbsp;0</td>
+<td>&nbsp;0</td>
+
+</tr>
+
+</tbody></table>
+</center>Moving through the array we increment counters:
+<center>
+<table border="" bordercolor="" cellpadding="2">
+
+<tbody><tr align="CENTER">
+<td>&nbsp; 0 &nbsp;</td>
+<td>&nbsp; 1 &nbsp;</td>
+<td>&nbsp; 2 &nbsp;</td>
+<td>&nbsp; 3 &nbsp;</td>
+<td>&nbsp; 4 &nbsp;</td>
+<td>&nbsp; 5 &nbsp;</td>
+
+</tr>
+
+<tr align="CENTER">
+<td>&nbsp;0</td>
+<td>&nbsp;0</td>
+<td>&nbsp;2</td>
+<td>&nbsp;2</td>
+<td>&nbsp;1</td>
+<td>&nbsp;1</td>
+
+</tr>
+
+</tbody></table>
+</center>Next,we simply read off the number of each occurrence: <code>2 2 3 3 4 5</code>.
+
+
+<h2>O(n<sup>2</sup>) algorithms</h2>
+<h3>Bubble Sort </h3>
+The algorithm works by comparing each item in the list with the item next to it, and swapping
+them if required. In other words, the largest element has bubbled to the top of the array.
+
+The algorithm repeats this process until it makes a pass all the way through the list without
+swapping any items.
+
+<dir><pre>void bubbleSort(int ar[])
+{
+   for (int i = (ar.length - 1); i &gt;= 0; i--)
+   {
+      for (int j = 1; j &#8804; i; j++)
+      {
+         if (ar[j-1] &gt; ar[j])
+         {
+              int temp = ar[j-1];
+              ar[j-1] = ar[j];
+              ar[j] = temp;
+   } } } }
+</pre></dir>
+<b>Example.</b> Here is one step of the algorithm. The largest element - 7 - is bubbled to
+the top:
+<blockquote>
+<b><font color="green">7, 5</font></b>, 2, 4, 3, 9<br>
+5, <b><font color="green">7, 2</font></b>, 4, 3, 9<br>
+5, 2, <b><font color="green">7, 4</font></b>, 3, 9<br>
+5, 2, 4, <b><font color="green">7, 3</font></b>, 9<br>
+5, 2, 4, 3, <b><font color="green">7, 9</font></b><br>
+5, 2, 4, 3, 7, 9<br>
+</blockquote>
+The worst-case runtime complexity is O(n<sup>2</sup>). See explanation below
+<br>&nbsp;
+<center><img src="./Sorting_files/bubbleSort.bmp"></center>
+
+
+<h3>Selection Sort </h3>
+The algorithm works by selecting the smallest unsorted item and then swapping it with the
+item in the
+next position to be filled.
+<p>The selection sort works as follows: you look through the entire array for the smallest
+element,
+once you find it you swap it (the smallest element) with the first element of the array. Then
+you look
+for the smallest element in the remaining array (an array without the first element) and swap
+it with
+the second element. Then you look for the smallest element in the remaining array (an array
+without
+first and second elements) and swap it with the third element, and so on. Here is an example,
+</p><dir><pre>void selectionSort(int[] ar){
+   for (int i = 0; i ‹ ar.length-1; i++)
+   {
+      int min = i;
+      for (int j = i+1; j ‹ ar.length; j++)
+            if (ar[j] ‹ ar[min]) min = j;
+      int temp = ar[i];
+      ar[i] = ar[min];
+      ar[min] = temp;
+} }
+</pre></dir>
+
+
+<b>Example.</b>
+<blockquote>
+<b>29</b>,  64,  73,  34,  <b><font color="green">20</font></b>,  <br>
+20,  <b>64</b>,  73,  34,  <b><font color="green">29</font></b>,  <br>
+20,  29,  <b>73</b>,  <b><font color="green">34</font></b>,  64  <br>
+20,  29,  34,  <b>73</b>,  <b><font color="green">64</font></b>  <br>
+20,  29,  34,  64,  73  <br>
+</blockquote>
+The worst-case runtime complexity is O(n<sup>2</sup>).
+
+
+<h3>Insertion Sort </h3>
+To sort unordered list of elements, we remove its entries one at a time and then insert each
+of
+them into a sorted part (initially empty):
+<dir><pre>void insertionSort(int[] ar)
+{
+   for (int i=1; i ‹ ar.length; i++)
+   {
+      int index = ar[i]; int j = i;
+      while (j &gt; 0 &amp;&amp; ar[j-1] &gt; index)
+      {
+           ar[j] = ar[j-1];
+           j--;
+      }
+      ar[j] = index;
+} }
+</pre></dir>
+<b>Example.</b> We color a sorted part in green, and an unsorted part in black. Here is an
+insertion
+sort step by step. We take an element from unsorted part and compare it with elements
+in sorted part, moving form right to left.
+
+
+<blockquote>
+29,  20,  73,  34,  64 <br>
+<b><font color="green">29</font></b>,  20,  73,  34,  64 <br>
+<b><font color="green">20, 29</font></b>,  73,  34,  64 <br>
+<b><font color="green">20, 29,  73</font></b>,  34,  64 <br>
+<b><font color="green">20, 29,  34,  73</font></b>,  64 <br>
+<b><font color="green">20, 29,  34,  64,  73</font></b> <br>
+</blockquote>
+
+Let us compute the worst-time complexity of the insertion sort. In sorting the most
+expensive part is a comparison of two elements. Surely that is a dominant factor in the
+running time. We will calculate the number of comparisons of an array of N elements:
+<blockquote>
+we need 0 comparisons to insert the first element<br>
+we need 1 comparison to insert the second element<br>
+we need 2 comparisons to insert the third element<br>
+...<br>
+we need (N-1) comparisons (at most) to insert the last element
+</blockquote>
+Totally,
+<blockquote>
+1 + 2 + 3 + ... + (N-1) = O(n<sup>2</sup>)
+</blockquote>
+The worst-case runtimecomplexity is O(n<sup>2</sup>).What is the best-case runtime complexity? O(n).
+The advantage of insertion sort comparing it to the previous two sorting algorithm is
+that insertion sort runs in linear time on nearly sorted data.
+
+
+
+
+
+<h2>O(n log n) algorithms</h2>
+<h3>Mergesort</h3>
+Merge-sort is based on the divide-and-conquer paradigm. It involves the following three steps:
+<ul>
+<li>Divide the array into two (or more) subarrays
+</li><li>Sort each subarray (Conquer)
+</li><li>Merge them into one (in a smart way!)
+</li></ul>
+
+<b>Example</b>. Consider the following array of numbers
+<ul>
+<font face="Helvetica" color="#006666"><b>
+<dir><pre>27  10  12  25  34  16  15  31</pre></dir></b></font>
+divide it into two parts
+<font face="Helvetica" color="#006666"><b>
+<dir><pre>27  10  12  25            34  16  15  31</pre></dir></b></font>
+divide each part into two parts
+<font face="Helvetica" color="#006666"><b>
+<dir><pre>27  10            12  25            34  16            15  31</pre></dir></b></font>
+divide each part into two parts
+<font face="Helvetica" color="#006666"><b>
+<dir><pre>27       10       12       25       34       16       15       31</pre></dir></b></font>
+
+<p>&nbsp;
+
+</p><p>merge (cleverly-!)  parts
+<font face="Helvetica" color="#006666"><b>
+</b></font></p><dir><pre><font face="Helvetica" color="#006666"><b>10  27            12  25            16  34            15  31</b></font></pre></dir>
+merge parts
+<font face="Helvetica" color="#006666"><b>
+<dir><pre>10  12  25  27                 15  16  31  34</pre></dir></b></font>
+merge parts into one
+<font face="Helvetica" color="#006666"><b>
+<dir><pre>10  12  15  16  25  27  31  34</pre></dir></b></font>
+</ul>
+
+
+<p>How do we merge two sorted subarrays? We define three references at the front of each array.
+
+</p><center><img src="./Sorting_files/merging1.bmp" width="253" height="178"></center>
+
+<p>We keep picking the smallest element and move it to a temporary array, incrementing the corresponding indices.
+
+</p><center><img src="./Sorting_files/merging2.bmp" width="253" height="178"></center>
+
+
+<p>See implementation details in in <a href="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Sorting%20Algorithms/code/MergeSort.java">MergeSort.java</a>.
+
+
+</p><h4>Complexity of Mergesort</h4>
+Suppose T(n) is the number of comparisons needed to sort an array of n elements by the
+MergeSort
+algorithm. By splitting an array in two parts we reduced a problem to sorting two parts but
+smaller
+sizes, namely n/2. Each part can be sort in T(n/2). Finally, on the last step we perform n-1
+comparisons to merge these two parts in one. All together, we have the following equation
+<blockquote><code>
+T(n) = 2*T(n/2) + n - 1
+</code></blockquote>
+The solution to this equation is beyond the scope of this course. However I will give you a
+resoning
+using a binary tree. We visualize the mergesort dividing process as a tree
+
+<center><img src="./Sorting_files/mergesort_complexity.bmp" height="300" width="420"></center>
+
+
+
+
+<h2>Lower bound</h2>
+<p>What is the lower bound (the least running time in the worst-case) for all sorting comparison algorithms? A lower bound is a mathematical argument saying you can't hope to go faster than a certain amount. The preceding section presented O(n log n) mergesort, but is this the best we can do? In this section we show that any sorting algorithm that sorts using comparisons must make O(n log n) such comparisons.
+
+
+
+</p><p>Suppose we have N elements. How many
+different arrangements can you make? There are N possible choices for the first element,
+(N-1) possible choices for the second element, .. and so on. Multiplying them, we get N! (N
+factorial.)
+
+</p><p>Next, we observe that each comparison cut down the number of all possible comparisons by a
+factor 2. Any comparison sorting algorithm can always be put in the form of a <i>decision
+tree</i>. And conversely, a tree like this can be used as a sorting algorithm. This figure illustrates
+sorting a list of {a<sub>1</sub>, a<sub>2</sub>, a<sub>3</sub>} in the form of a dedcision tree:
+
+</p><center><img src="./Sorting_files/decision-tree.bmp" height="280" width="420"></center>
+
+Observe, that the worst case number of comparisons made by an algorithm is just the longest
+path in the tree. At each leaf in the tree, no more comparisons to be made. Therefore, the
+number of leaves cannot be more than 2<sup>x</sup>, where x is the maximum number of
+comparisons (or the longest path in the tree). On the other hand, as we counded in the
+previous
+paragraph, the number of all possible permutatioins is n!. Combining these two facts, gives
+us the following equality:
+<center>2<sup>x</sup> &#8805; N!</center>
+where x is the number of comparisons. By taking logarithm, implies
+<center>x &#8805; log N!</center>
+Using the Stirling formula for N!, we finally arrive at
+<center>x &#8805; N log N  </center>
+or
+<center>x = O(N Log N) </center>
+
+
+
+<h2>Sorting in Java</h2>
+In this section we discuss four different ways to sort data in Java.
+
+
+<h3>Arrays of primitives</h3>
+An array of primitives is sorted by direct invocation of <code>Arrays.sort</code> method
+
+<dir><pre>int[] a1 = {3,4,1,5,2,6};
+Arrays.sort(a1);
+</pre></dir>
+
+<h3>Arrays of objects</h3>
+In order to sort an array of abstract object, we have to make sure that objects are
+mutually comparable. The idea of comparable is extension of equals in a sence than we need to
+know not only that two objects are not equal but which one is larger or smaller. This is
+supported by the <code>Comparable</code> interface. This interface contains only one method with the following signature:
+<dir><pre>	public int compareTo(Object obj);
+</pre></dir>
+<p>The returned value is negative, zero or positive depending on whether this object is
+less, equals or greater than parameter object. Note a difference between the equals()  and compareTo() methods. In the following code example we design a class of playing cards that can be compared based on their values:
+
+</p><dir><pre>class Card implements Comparable&lt;Card&gt;
+{
+   private String suit;
+   private int value;
+
+   public Card(String suit, int value)
+   {
+      this.suit = suit;
+      this.value = value;
+   }
+   public int getValue()
+   {
+      return value;
+   }
+   public String getSuit()
+   {
+      return suit;
+   }
+   public int compareTo(Card x)
+   {
+      return getValue() - x.getValue();
+   }
+}
+</pre></dir>
+
+
+<p>Suppose that the Card class implements the <code>Comparable</code> interface, then we can sort a group of cards by envoking by <code>Arrays.sort</code> method.
+</p><dir><pre>Card[] hand = new Card[5];
+Random rand = new Random();
+for (int i = 0; i ‹ 5; i++)
+	hand[i] = new Card(rand.nextInt(5), rand.nextInt(12));
+Arrays.sort(hand);
+</pre></dir>
+
+<p>It is important to recognize that if a class implements the Comparable interface than compareTo() and equals() methods must be correlated in a sense that if <code>x.compareTo(y)==0</code>, then <code>x.equals(y)==true</code>. The default equals() method compares two objects based on their reference numbers and therefore in the above code example two cards with the same value won't be equal. And a final comment, if the equals() method is overriden than the hashCode() method must also be overriden, in order to maintain the following properety: if <code>x.equals(y)==true</code>, then <code>x.hashCode()==y.hashCode()</code>.
+
+</p><h3>Collection of comparable objects</h3>
+Mutually comparable objects in a collection are sorted by <code>Collections.sort</code>
+method:
+
+<dir><pre>ArrayList‹Integer&gt; a2 = new ArrayList‹Integer&gt; (5);
+...
+Collections.sort(a2);
+</pre></dir>
+
+
+<h3>Comparator</h3>
+The <code>Comparable</code> interface does not provide a complete solution. The main
+problem is that the above code works only for objects that have that particular
+implementation of the <code>compareTo</code> method. Once you implemented <code>compareTo
+</code>, you don't have much flexibility. Moreover, it is not always possible to decide on a
+"correct" meaning for compareTo. This method can be based on many different ideas. The
+solution to this problem is to pass the comparison function as a parameter. Such comparison
+function in Java is implemented as the <code>Comparator</code> interface. Consider a poker
+hand: to do a fast evaluation you want to sort your cards
+either by value or by suit. The way to support these two different criterias is to create two classes <code>
+SortByValue</code> and <code>SortBySuit</code> that implements <code>Comparator</code>
+interface
+<dir><pre>class SuitSort implements Comparator
+{
+   public int compare(Object x, Object y)
+   {
+      int a = ((Card) x).getSuit();
+      int b = ((Card) y).getSuit();
+
+      return a-b;
+   }
+}
+</pre></dir>
+
+and then pass a comparison function into a sorting routine. In Java, you cannot pass a
+method; you should wrap a class around it.
+<dir><pre>Arrays.sort(hand, new SuitSort());
+</pre></dir>
+This new object <code>SuitSort</code> is called a <b>functor</b>, and the style of
+programming is called a functional programming. The functor is a simple class which usually
+contains no data, but only a single method. We can design different comparison functions by
+simply declaring new classes, one class for each kind of functionality. An instance of this
+class (which implements the interface) is passed to algorithm, which in turn calls the method
+from the function object.
+
+
+<p>See <a href="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Sorting%20Algorithms/code/SortDemo.java">SortDemo.java</a> and <a href="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Sorting%20Algorithms/code/SortDemo2.java">SortDemo2.java</a> for implementation details.
+
+</p><hr>
+<p>Victor S.Adamchik, CMU, 2009
+
+
+
+
+
+
+</p></body></html>

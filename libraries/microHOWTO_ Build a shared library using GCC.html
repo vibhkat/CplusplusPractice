@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- saved from url=(0070)http://www.microhowto.info/howto/build_a_shared_library_using_gcc.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>microHOWTO: Build a shared library using GCC</title>
+<link rel="stylesheet" href="./microHOWTO_ Build a shared library using GCC_files/microhowto.css" type="text/css">
+<link rel="icon" href="http://www.microhowto.info/favicon.png" type="image/png">
+<script async="" src="./microHOWTO_ Build a shared library using GCC_files/analytics.js"></script><script type="text/javascript" src="./microHOWTO_ Build a shared library using GCC_files/microhowto.js"></script><style type="text/css"></style><meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body onload="on_load();">
+<div id="outer-header">
+<div id="header">
+<div id="logo"><a href="http://www.microhowto.info/"><img src="./microHOWTO_ Build a shared library using GCC_files/microhowto.png" alt="microHOWTO"></a></div>
+<div id="search">
+<form action="http://www.google.com/" id="cse-search-box"><div>
+<input type="hidden" name="cx" value="partner-pub-1056047781503747:4299715711"><input type="hidden" name="ie" value="UTF-8"><input type="text" name="q" size="48" style="background: url(http://cse.google.com/cse/intl/en/images/google_custom_search_watermark.gif) 0% 50% no-repeat rgb(255, 255, 255);"><input type="submit" name="sa" value="Search">
+</div><input name="siteurl" type="hidden" value="www.microhowto.info/howto/build_a_shared_library_using_gcc.html"><input name="ref" type="hidden" value=""><input name="ss" type="hidden" value=""></form>
+<script type="text/javascript" src="./microHOWTO_ Build a shared library using GCC_files/brand"></script>
+</div>
+<div id="menu"><ul>
+<li class="selected"><a href="http://www.microhowto.info/">About</a></li>
+<li><a href="http://www.microhowto.info/howto/index.html">microHOWTOs</a></li>
+<li><a href="http://www.microhowto.info/tutorials/index.html">Tutorials</a></li>
+<li><a href="http://www.microhowto.info/troubleshooting/index.html">Troubleshooting</a></li>
+<li><a href="http://www.microhowto.info/tools/index.html">Tools</a></li>
+</ul></div>
+</div>
+<div style="clear: both"></div>
+</div>
+<div id="main">
+<div id="panels">
+<div id="topics" class="panel">
+<h2>Topics</h2>
+<ul class="topics">
+<li><a href="http://www.microhowto.info/topic/system.html">System</a></li>
+<li><a href="http://www.microhowto.info/topic/storage.html">Storage</a></li>
+<li><a href="http://www.microhowto.info/topic/networking.html">Networking</a></li>
+<li><a href="http://www.microhowto.info/topic/security.html">Security</a></li>
+<li><a href="http://www.microhowto.info/topic/dns.html">DNS</a></li>
+<li><a href="http://www.microhowto.info/topic/mail.html">Mail</a></li>
+<li><a href="http://www.microhowto.info/topic/web.html">Web</a></li>
+<li><a href="http://www.microhowto.info/topic/graphics.html">Graphics</a></li>
+<li><a href="http://www.microhowto.info/topic/databases.html">Databases</a></li>
+<li><a href="http://www.microhowto.info/topic/scm.html">SCM</a></li>
+<li><a href="http://www.microhowto.info/topic/programming.html">Programming</a></li>
+</ul>
+</div>
+<div id="adsense-panel" class="panel">
+<script async="async" src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-1056047781503747" data-ad-slot="3108541718"></ins><script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div id="amazon-panel" class="panel">
+<script type="text/javascript" language="javascript">
+  amzn_assoc_ad_type = "contextual";
+  amzn_assoc_tracking_id = "mi0b74-20";
+  amzn_assoc_marketplace = "amazon";
+  amzn_assoc_region = "US";
+  amzn_assoc_placement = "CN3GZKYPYOORMX3F";
+  amzn_assoc_linkid = "CN3GZKYPYOORMX3F";
+  amzn_assoc_emphasize_categories = "1000, 13900871, 229534";
+  amzn_assoc_fallback_products = "";
+  amzn_assoc_width = "160";
+  amzn_assoc_height = "600";
+</script><script type="text/javascript" language="javascript" src="http://z-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=US&source=ac"></script>
+</div>
+<div id="rating" class="panel">
+<h2>Rate this page</h2>
+<form method="post" action="http://www.microhowto.info/rating.cgi">
+<ul>
+<li><label><input type="radio" name="level" value="excellent">Excellent</label></li>
+<li><label><input type="radio" name="level" value="good">Good</label></li>
+<li><label><input type="radio" name="level" value="acceptable">Acceptable</label></li>
+<li><label><input type="radio" name="level" value="poor">Poor</label></li>
+<li><label><input type="radio" name="level" value="dreadful">Dreadful</label></li>
+</ul>
+<div style="text-align: center">
+<button type="submit" name="action" value="rate">Rate</button><button type="submit" name="action" value="view">View</button>
+</div>
+<input type="hidden" name="title" value="Build a shared library using GCC"><input type="hidden" name="urlpath" value="howto/build_a_shared_library_using_gcc.html">
+</form>
+</div>
+<div id="metadata" class="panel">
+<div class="linkto"><form method="get" action="http://www.microhowto.info/link.cgi">
+<input type="submit" name="submit" value="Link to this page"><input type="hidden" name="title" value="Build a shared library using GCC"><input type="hidden" name="urlpath" value="howto/build_a_shared_library_using_gcc.html">
+</form></div>
+<div class="flattr"><a href="http://flattr.com/thing/466131/microHOWTO" target="_blank"><img src="./microHOWTO_ Build a shared library using GCC_files/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"></a></div>
+<div id="google"><a class="enable" href="http://www.microhowto.info/howto/build_a_shared_library_using_gcc.html#" onclick="show_google()"><img src="./microHOWTO_ Build a shared library using GCC_files/google+1.png">&nbsp;<span>click to enable</span></a></div>
+<div id="facebook"><div id="fb-root"><a class="enable" href="http://www.microhowto.info/howto/build_a_shared_library_using_gcc.html#" onclick="show_facebook()"><img src="./microHOWTO_ Build a shared library using GCC_files/f_logo.png">&nbsp;<span>click to enable</span></a></div></div>
+<div id="twitter"><a class="enable" href="http://www.microhowto.info/howto/build_a_shared_library_using_gcc.html#" onclick="show_twitter()"><img src="./microHOWTO_ Build a shared library using GCC_files/twitter.png">&nbsp;<span>click to enable</span></a></div>
+</div>
+</div>
+<div id="content">
+<div id="adsense-banner">
+<script async="async" src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-1056047781503747" data-ad-slot="5933482117"></ins><script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<h1>Build a shared library using GCC</h1>
+<div class="toc"><table class="toc">
+<tbody><tr><td><h2 class="toc">Content</h2></td></tr>
+<tr><td><ul class="toc">
+<li><a href="http://www.microhowto.info/howto/build_a_shared_library_using_gcc.html#idp4512">1&nbsp;Objective</a></li>
+<li><a href="http://www.microhowto.info/howto/build_a_shared_library_using_gcc.html#idp5664">2&nbsp;Background</a></li>
+<li><a href="http://www.microhowto.info/howto/build_a_shared_library_using_gcc.html#idp10048">3&nbsp;Scenario</a></li>
+<li>
+<a href="http://www.microhowto.info/howto/build_a_shared_library_using_gcc.html#idp14000">4&nbsp;Method</a><ul class="toc">
+<li><a href="http://www.microhowto.info/howto/build_a_shared_library_using_gcc.html#idp14640">4.1&nbsp;Overview</a></li>
+<li><a href="http://www.microhowto.info/howto/build_a_shared_library_using_gcc.html#idp18480">4.2&nbsp;Choose an soname (if required)</a></li>
+<li><a href="http://www.microhowto.info/howto/build_a_shared_library_using_gcc.html#idp25392">4.3&nbsp;Compile the source code using the -fPIC option</a></li>
+<li><a href="http://www.microhowto.info/howto/build_a_shared_library_using_gcc.html#idp30080">4.4&nbsp;Link the object code using the -fPIC and -shared options</a></li>
+</ul>
+</li>
+<li><a href="http://www.microhowto.info/howto/build_a_shared_library_using_gcc.html#idp38640">5&nbsp;Testing</a></li>
+<li>
+<a href="http://www.microhowto.info/howto/build_a_shared_library_using_gcc.html#idp48416">6&nbsp;Alternatives</a><ul class="toc"><li><a href="http://www.microhowto.info/howto/build_a_shared_library_using_gcc.html#idp49056">6.1&nbsp;Using GNU Libtool</a></li></ul>
+</li>
+<li><a href="http://www.microhowto.info/howto/build_a_shared_library_using_gcc.html#idp53776">7&nbsp;Further reading</a></li>
+</ul></td></tr>
+</tbody></table></div>
+
+<category name="make"></category>
+<tag name="make"></tag>
+<tag name="gcc"></tag>
+
+<div class="infobox"><table>
+<tbody><tr><td><h2>Tested on</h2></td></tr>
+
+<tr><td>Debian (Etch, Lenny, Squeeze)</td></tr>
+<tr><td>Ubuntu (Hardy, Intrepid, Jaunty, Karmic, Lucid, Maverick, Natty, Oneiric, Precise, Quantal)</td></tr>
+</tbody></table></div>
+
+<h2><a name="idp4512">Objective</a></h2>
+
+<p>To build a shared library using GCC</p>
+
+
+<h2><a name="idp5664">Background</a></h2>
+
+<p>Programs can be linked against libraries either at compile time or at run time. An advantage of linking at run time is that a single copy of the library can be shared between many programs, both on disc and in memory. Libraries suitable for use in this way are known as shared libraries.</p>
+<p>On modern Linux-based systems, shared libraries differ from static ones in the following respects:</p>
+<ul>
+<li>they are ELF files (as opposed to archives compatible with the <code>ar</code> program),</li>
+<li>they have a dynamic symbol table (in addition to a static table), and</li>
+<li>the code within them must be position-independent.</li>
+</ul>
+<p>For these reasons, some adjustments to the build process are needed to create a shared library instead of a static one.</p>
+
+
+<h2><a name="idp10048">Scenario</a></h2>
+
+<p>Suppose that you are building a library named <code>libqux</code> which is written in C. There are three source files: <code>foo.c</code>, <code>bar.c</code> and <code>baz.c</code>.</p>
+<p>The current version number of <code>libqux</code> is 1.5.0. It is fully backward-compatible with the previous version, 1.4.1, which had an soname of <code>libqux.so.1</code>.</p>
+
+
+<h2><a name="idp14000">Method</a></h2>
+
+<h3><a name="idp14640">Overview</a></h3>
+
+<p>The method described here has three steps:</p>
+<ol>
+<li>Choose an soname (if required).</li>
+<li>Compile the source code using the <code>-fPIC</code> option.</li>
+<li>Link the object code using the <code>-fPIC</code> and <code>-shared</code> options.</li>
+</ol>
+
+
+<h3><a name="idp18480">Choose an soname (if required)</a></h3>
+
+<p>An soname (‘shared object name’) is a label used when declaring shared library dependencies. Each executable contains a list of shared libraries that it needs in order to execute. Shared libraries can similarly declare dependencies on other shared libraries. This can be done using pathnames, but if the required library has an soname then that will be used in preference.</p>
+<p>Typically the pathname of a library will change whenever a new version is installed, whereas the soname should change only when the new version is incompatible with its predecessors to the extent that it cannot be used their place. It follows that when dependencies are declared using sonames, the library used at runtime need not be an exact match for the one present at build time:</p>
+<ul>
+<li>For a given library with a given soname, only the most recent version need be installed.</li>
+<li>Where there is a need for two versions of the same library to be installed alongside each other, they can be distinguished because they have different sonames.</li>
+</ul>
+<p>It is the degree of binary compatibility which determines whether the soname should change. For example, new functions can be added without breaking backward compatibility, but you cannot normally change the prototype of an existing function, nor do anything that could change the layout of a data structure. You should also consider changes made to the high-level behaviour of the library, as these can have an equally significant effect on backwards compatibility.</p>
+<p>In this particular instance, version 1.4.1 of <code>libqux</code> had an soname of <code>libqux.so.1</code>. Since version 1.5.0 is backwards-compatibile it can use the same soname. If this had not been the case then the soname would have needed to change, most likely to <code>libqux.so.2</code>.</p>
+
+
+<h3><a name="idp25392">Compile the source code using the -fPIC option</a></h3>
+
+<p>Object code intended for use in a shared library must be ‘position-independent’, meaning that it can execute without first being modified to account for where it has been loaded in memory. It remains necessary to allow for the location of <em>other</em> libraries, but any internal references are required to be position-independent.</p>
+<p>GCC can be instructed to generate position independent code using the <code>-fPIC</code> option:</p>
+<pre class="code">gcc -c -fPIC -o foo.o foo.c
+gcc -c -fPIC -o bar.o bar.c
+gcc -c -fPIC -o baz.o baz.c
+</pre>
+<p>This option is not enabled by default because it tends to cause some loss of performance, and for purposes other than building shared libraries it is often not necessary.</p>
+
+
+<h3><a name="idp30080">Link the object code using the -fPIC and -shared options</a></h3>
+
+<p>The default behaviour of the <code>gcc</code> and <code>g++</code> commands when linking is to produce an executable program. They can be instructed to produce a shared library instead by means of <code>-shared</code> option:</p>
+<pre class="code">gcc -shared -fPIC -Wl,-soname,libqux.so.1 -o libqux.so.1.5.0 foo.o bar.o baz.o -lc
+</pre>
+<p>The <code>-fPIC</code> option is needed when linking as it was when compiling to ensure that any code added by the linker is compatible with code previously generated by the compiler.</p>
+<p>The <code>-Wl</code> option passes a comma-separated list of arguments to the linker. As its name suggests, <code>-soname</code> specifies the required soname. If these options are omitted then the library will not have an soname.</p>
+<p>The <code>ldconfig</code> manpage recommends explicitly linking against <code>libc</code>, which has been done above using the <code>-l</code> option (<code>-lc</code>).</p>
+
+
+
+<h2><a name="idp38640">Testing</a></h2>
+
+<p>One way to test the library is to install it in a directory on the library search path. <code>/usr/local/lib</code> is usually the most appropriate choice. You will need to create softlinks corresponding to the soname of the library, and the name used to refer to the library when building the executable, if these are different from the filename:</p>
+<pre class="code">ln -s libqux.so.1.5.0 libqux.so.1
+ln -s libqux.so.1.5.0 libqux.so
+</pre>
+<p>A partial alternative is to run <code>ldconfig</code>, which automatically creates the first of the above softlinks but not the second. However you do it, this method of testing normally requires administrative privileges. 
+Once installed, it should be possible to link against the library using <code>-l</code>:</p>
+<pre class="code">gcc main.c -lqux
+</pre>
+<p>If you cannot or do not want to move the library to <code>/usr/local/lib</code> then it is possible to link against the library <em>in situ</em>. At build time this can be done by listing the pathname of the library as an argument to gcc without use of the <code>-l</code> option:</p>
+<pre class="code">gcc main.c libqux.so.1.5.0
+</pre>
+<p>At load time you will need to add the relevant directory to the library search path. This can be done by setting the environment variable <code>LD_LIBRARY_PATH</code>, for example:</p>
+<pre class="code">export LD_LIBRARY_PATH=`pwd`
+</pre>
+<p>As above, you will need to create a softlink corresponding to the soname of the library. If there is a need to search multiple directories then they should be specified as a colon-separated list in <code>LD_LIBRARY_PATH</code>.</p>
+
+
+<h2><a name="idp48416">Alternatives</a></h2>
+
+<h3><a name="idp49056">Using GNU Libtool</a></h3>
+
+<p><a href="http://www.gnu.org/software/libtool/">Libtool</a> is part of GNU Autotools. Its purpose is to simplify the process of building shared libraries, particularly those intended for use on multiple platforms. For example, for the scenario described above you could use the following sequence of commands:</p>
+<pre class="code">libtool --mode=compile gcc -c foo.c
+libtool --mode=compile gcc -c bar.c
+libtool --mode=compile gcc -c baz.c
+libtool --mode=link gcc -o libqux.la foo.lo bar.lo baz.lo -rpath /usr/local/lib -version-info 6:0:5
+</pre>
+<p>You may not need to these commands explicitly, because Libtool is often used in conjunction with Automake which has the ability to generate them automatically, but it is equally suitable for use as a stand-alone utility if that suits your purpose.</p>
+<p>Be aware that Libtool requires the use of a specific numbering scheme for specifying the interface version (passed using the <code>-version-info</code> option above), and that this should almost certainly not be equal to the release version. The Libtool manual describes when and how these values should be changed.</p>
+
+
+
+<h2><a name="idp53776">Further reading</a></h2>
+
+<ul>
+<li>
+<a href="http://tldp.org/HOWTO/Program-Library-HOWTO/shared-libraries.html">Program Library HOWTO</a>, David A Wheeler</li>
+<li>
+<a href="http://www.gnu.org/software/libtool/manual/html_node/Libtool-versioning.html">Libtool’s versioning system</a>, <em>GNU Libtool Manual</em>, GNU Project</li>
+<li>Vaughan <em>et al</em>, <a href="http://www.sourceware.org/autobook/autobook/autobook_91.html">Library Versioning</a>, <em>GNU Autoconf, Automake and Libtool</em>
+</li>
+<li>
+<a href="http://manpages.ubuntu.com/manpages/precise/man8/ldconfig.8.html">ldconfig(8)</a> (Ubuntu manpage)</li>
+</ul>
+
+<div class="categories"><p class="categories">Tags:
+<a href="http://www.microhowto.info/tags/gcc.html">gcc</a>&nbsp;|&nbsp;<a href="http://www.microhowto.info/tags/make.html">make</a></p></div>
+</div>
+<div style="clear: both"></div>
+</div>
+<div id="outer-footer"><div id="footer">
+<div id="copyright">
+© 2010–2015 <a href="http://www.microhowto.info/authors/gdshaw.html" rel="author">Graham Shaw</a>, <a href="http://www.microhowto.info/legal.html">some rights</a> reserved.
+</div>
+<ul>
+<li><a href="http://www.microhowto.info/conventions.html">Conventions</a></li>
+<li><a href="http://www.microhowto.info/privacy.html">Privacy</a></li>
+<li><a href="http://www.microhowto.info/legal.html">Legal</a></li>
+</ul>
+</div></div>
+<div id="cookies" style=""><form action="" method="GET"><p>Danger, Will Robinson: this website uses cookies. Read our <a href="http://www.microhowto.info/privacy.html">privacy policy</a> to learn more about your peril.
+<input type="button" name="close" value="X" onclick="hide_cookie_message()"></p></form></div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-53221957-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</body></html>

@@ -1,0 +1,22 @@
+#ifndef BULK_QUOTE_H
+#define BULK_QUOTE_H
+#include"Disc_Quote.h"
+class Bulk_quote: public Disc_quote{
+public:
+Bulk_quote()=default;
+Bulk_quote(const std::string& book, double price, std::size_t qty, double disc):Disc_quote(book, price,qty,disc){}
+Bulk_quote(const Bulk_quote& b):Disc_quote(b){std::cout<<"In BULK copy constructor"<<std::endl;}
+Bulk_quote& operator=(const Bulk_quote& rhs){Disc_quote::operator=(rhs); std::cout<<"In BULK copy assignment "<<std::endl;return *this;}
+double net_price(std::size_t ) const override;
+virtual Bulk_quote* clone() const& {return new Bulk_quote(*this);}
+virtual Bulk_quote* clone() const&& {return new Bulk_quote(std::move(*this));}
+};
+
+double Bulk_quote::net_price(std::size_t cnt) const
+{
+std::cout<<"Bulk_quote net price"<<std::endl;
+if(cnt>=quantity) return cnt*(1-discount)*price;
+else return cnt*price;
+}
+
+#endif

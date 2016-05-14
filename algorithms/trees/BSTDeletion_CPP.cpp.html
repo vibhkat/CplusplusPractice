@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<!-- saved from url=(0082)https://gist.github.com/mycodeschool/9465a188248b624afdbf#file-bstdeletion_cpp-cpp -->
+<html class="  "><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# githubog: http://ogp.me/ns/fb/githubog#"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>BSTDeletion_CPP.cpp</title>
+
+  <meta content="authenticity_token" name="csrf-param">
+<meta content="IXJq5fIJCuTzwjIWgcTDGd29HIW40KnvEx7WfSYg3xQ5y85XSt6cRQGRBwoy5dLRHfNbY2S7pSr97UfZjoTdLw==" name="csrf-token">
+  <meta name="viewport" content="width=960">
+
+
+    <link type="text/plain" rel="author" href="https://github.com/humans.txt">
+    <meta content="gist" name="octolytics-app-id"><meta content="collector.githubapp.com" name="octolytics-host"><meta content="collector-cdn.github.com" name="octolytics-script-host"><meta content="8152C1CB:678D:21099A:557A958B" name="octolytics-dimension-request_id">
+  <link rel="assets" href="https://gist-assets.github.com/">
+  <link rel="zeroclipboard-assets" href="https://gist-assets.github.com/assets/zeroclipboard/dist/ZeroClipboard-aeb54c213f0d09883fed5a0947132da9.swf">
+  <link rel="editor-assets" href="https://gist-assets.github.com/assets/editor-cac2d04c8f22b5ffe38f6bc97dc54f54.js">
+  <link rel="mount-point" href="https://gist.github.com/">
+
+
+  <link href="https://gist-assets.github.com/assets/application-0622f4c051642df21ab90d3eb66a52b8.css" media="screen, print" rel="stylesheet">
+  <script async="" src="./BSTDeletion_CPP.cpp_files/analytics.js"></script><script src="./BSTDeletion_CPP.cpp_files/application-9441728a90e54c65c8d4079bfabcbff5.js"></script>
+
+      <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@github">
+  <meta property="og:title" content="mycodeschool/BSTDeletion_CPP.cpp">
+  <meta property="og:type" content="githubog:gist">
+  <meta property="og:url" content="https://gist.github.com/mycodeschool/9465a188248b624afdbf">
+  <meta property="og:image" content="https://avatars1.githubusercontent.com/u/5526282?s=140">
+  <meta property="og:site_name" content="GitHub Gists">
+  <meta property="og:description" content=" - Gist is a simple way to share snippets of text and code with others.">
+  <meta name="description" content=" - Gist is a simple way to share snippets of text and code with others.">
+
+
+<script src="./BSTDeletion_CPP.cpp_files/api.js"></script><style type="text/css"></style></head>
+
+<body class=" " data-plan="">
+
+  <div id="wrapper">
+    
+
+    <div id="header" class="header header-logged-out">
+      <div class="container">
+        <a class="header-logo-wordmark" href="https://gist.github.com/">
+          <span class="octicon octicon-logo-github"></span>
+          <span class="octicon-logo octicon-logo-gist"></span>
+        </a>
+
+        <div class="header-actions">
+          <a class="button primary" href="https://github.com/signup?return_to=gist">Sign up for a GitHub account</a>
+          <a class="button" href="https://gist.github.com/login?return_to=%2Fmycodeschool%2F9465a188248b624afdbf" data-skip-pjax="">Sign in</a>
+        </div>
+        <div class="divider-vertical"></div>
+        <div class="topsearch">
+  <form id="top_search_form" action="https://gist.github.com/search" data-pjax-remote="push" accept-charset="UTF-8">
+    <div class="search">
+      <input type="text" class="search js-search js-navigation-enable " name="q" placeholder="Search…" data-hotkey="/" autocomplete="off" autocorrect="off" value="">
+
+    </div>
+    <div class="divider-vertical"></div>
+  </form>
+  <ul class="top-nav">
+    <li class="explore"><a href="https://gist.github.com/discover">All Gists</a></li>
+
+  </ul>
+</div>
+
+      </div>
+    </div>
+
+    <div class="site-content" id="js-pjax-container" data-pjax-container="">
+      <div id="js-flash-container" class="site-container js-site-container" data-url="/mycodeschool/9465a188248b624afdbf">
+  
+  
+
+<meta content="true" name="octolytics-dimension-public"><meta content="11443533" name="octolytics-dimension-gist_id"><meta content="9465a188248b624afdbf" name="octolytics-dimension-gist_name"><meta content="false" name="octolytics-dimension-anonymous"><meta content="5526282" name="octolytics-dimension-owner_id"><meta content="mycodeschool" name="octolytics-dimension-owner_login"><meta content="false" name="octolytics-dimension-forked">
+
+<div class="pagehead repohead">
+  <div class="container">
+    <div class="title-actions-bar">
+      <ul class="pagehead-actions">
+
+      </ul>
+      <h1 itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title ">
+  <div class="meta">
+    <div class="gist-author">
+      <img src="./BSTDeletion_CPP.cpp_files/5526282" width="26" height="26">
+        <span class="author vcard">
+            <span itemprop="title"><a href="https://gist.github.com/mycodeschool">mycodeschool</a></span>
+        </span> /
+      <strong><a href="https://gist.github.com/mycodeschool/9465a188248b624afdbf" class="js-current-repository">BSTDeletion_CPP.cpp</a></strong>
+    </div>
+    <div class="gist-timestamp">
+        <span class="datetime">Last active <time datetime="2014-05-01T02:48:36Z" is="relative-time" title="Apr 30, 2014, 8:48 PM MDT">on Apr 30, 2014</time></span>
+    </div>
+</div></h1>
+
+    </div>
+
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="gist js-gist-container gist-with-sidebar with-full-navigation" data-version="ff5842220d84629535509adec5dda82af13c16a7" data-created="false" data-updated="false">
+
+      <div class="gist-sidebar clearfix">
+  <div class="sunken-menu vertical-right repo-nav js-repo-nav js-repository-container-pjax js-octicon-loaders">
+    <div class="sunken-menu-contents">
+      <ul class="sunken-menu-group">
+        <li class="tooltipped tooltipped-w" aria-label="Code">
+          <a aria-label="Code" class="sunken-menu-item selected" data-pjax="true" href="https://gist.github.com/mycodeschool/9465a188248b624afdbf">
+            <span class="octicon octicon-code"></span> <span class="full-word">Code</span>
+            <img alt="" class="mini-loader" height="16" src="./BSTDeletion_CPP.cpp_files/octocat-spinner-32-ad13d0fd1814c3fda3b5018da94432ea.gif" width="16">
+</a>        </li>
+
+          <li class="tooltipped tooltipped-w" aria-label="Revisions">
+            <a aria-label="Revisions" class="sunken-menu-item" data-pjax="true" href="https://gist.github.com/mycodeschool/9465a188248b624afdbf/revisions">
+              <span class="octicon octicon-git-commit"></span> <span class="full-word">Revisions</span>
+              <img alt="" class="mini-loader" height="16" src="./BSTDeletion_CPP.cpp_files/octocat-spinner-32-ad13d0fd1814c3fda3b5018da94432ea.gif" width="16">
+              <span class="counter">2</span>
+</a>          </li>
+
+          <li class="tooltipped tooltipped-w" aria-label="Stars">
+            <a aria-label="Stars" class="sunken-menu-item" data-pjax="true" href="https://gist.github.com/mycodeschool/9465a188248b624afdbf/stars">
+              <span class="octicon octicon-star"></span> <span class="full-word">Stars</span>
+              <img alt="" class="mini-loader" height="16" src="./BSTDeletion_CPP.cpp_files/octocat-spinner-32-ad13d0fd1814c3fda3b5018da94432ea.gif" width="16">
+              <span class="counter">8</span>
+</a>          </li>
+
+          <li class="tooltipped tooltipped-w" aria-label="Forks">
+            <a aria-label="Forks" class="sunken-menu-item" data-pjax="true" href="https://gist.github.com/mycodeschool/9465a188248b624afdbf/forks">
+              <span class="octicon octicon-git-branch"></span> <span class="full-word">Forks</span>
+              <img alt="" class="mini-loader" height="16" src="./BSTDeletion_CPP.cpp_files/octocat-spinner-32-ad13d0fd1814c3fda3b5018da94432ea.gif" width="16">
+              <span class="counter">5</span>
+</a>          </li>
+      </ul>
+    </div><!-- /.sunken-menu-group -->
+  </div><!-- /.sunken-menu-contents -->
+
+  <div class="only-with-full-nav">
+
+    <div class="embed-url open" style="display: block;">
+      <h3><strong>Embed</strong> URL</h3>
+      <div class="clone-url-box">
+        <input type="text" class="clone js-url-field" value="&lt;script src=&quot;https://gist.github.com/mycodeschool/9465a188248b624afdbf.js&quot;&gt;&lt;/script&gt;" readonly="readonly">
+        <span class="url-box-clippy">
+          <button aria-label="copy to clipboard" class="js-zeroclipboard minibutton zeroclipboard-button" data-clipboard-text="&lt;script src=&quot;https://gist.github.com/mycodeschool/9465a188248b624afdbf.js&quot;&gt;&lt;/script&gt;" data-copied-hint="copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+        </span>
+      </div>
+    </div>
+    <p class="clone-options"></p>
+
+      
+<div class="clone-url open" data-protocol-type="http" data-url="https://gist.github.com/9465a188248b624afdbf.git">
+  <h3><strong>HTTPS</strong> clone URL</h3>
+  <div class="clone-url-box">
+    <input type="text" class="clone url-field js-url-field" value="https://gist.github.com/9465a188248b624afdbf.git" readonly="readonly">
+    <span class="url-box-clippy">
+      <button aria-label="copy to clipboard" class="js-zeroclipboard minibutton zeroclipboard-button" data-clipboard-text="https://gist.github.com/9465a188248b624afdbf.git" data-copied-hint="copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+    </span>
+  </div>
+</div>
+
+  
+<div class="clone-url " data-protocol-type="ssh" data-url="git@gist.github.com:/9465a188248b624afdbf.git">
+  <h3><strong>SSH</strong> clone URL</h3>
+  <div class="clone-url-box">
+    <input type="text" class="clone url-field js-url-field" value="git@gist.github.com:/9465a188248b624afdbf.git" readonly="readonly">
+    <span class="url-box-clippy">
+      <button aria-label="copy to clipboard" class="js-zeroclipboard minibutton zeroclipboard-button" data-clipboard-text="git@gist.github.com:/9465a188248b624afdbf.git" data-copied-hint="copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+    </span>
+  </div>
+</div>
+
+
+<p class="clone-options">You can clone with
+      <a href="https://gist.github.com/mycodeschool/9465a188248b624afdbf#" class="js-clone-selector" data-skip-pjax="" data-protocol="http">HTTPS</a>
+      or <a href="https://gist.github.com/mycodeschool/9465a188248b624afdbf#" class="js-clone-selector" data-skip-pjax="" data-protocol="ssh">SSH</a>.
+</p>
+
+
+    <a aria-label="Download BSTDeletion_CPP.cpp as a zip file" class="minibutton sidebar-button" href="https://gist.github.com/mycodeschool/9465a188248b624afdbf/download" rel="nofollow" title="Download BSTDeletion_CPP.cpp as a zip file">
+      <span class="octicon octicon-cloud-download"></span>
+      Download Gist
+</a>  </div><!-- /.only-with-full-nav -->
+
+</div>
+
+
+    <div class="gist-content">
+
+      <div class="files">
+            <div id="file-bstdeletion_cpp-cpp" class="file ">
+    <a href="https://gist.github.com/mycodeschool/9465a188248b624afdbf" class="link-overlay">
+    <span class="link">View <strong>BSTDeletion_CPP.cpp</strong> <span class="octicon octicon-arrow-right"></span></span>
+  </a>
+  <div class="meta clearfix">
+    <div class="info file-name">
+      <span class="icon">
+        <b class="octicon octicon-gist"></b>
+      </span>
+      <a aria-label="Permalink" href="./BSTDeletion_CPP.cpp_files/BSTDeletion_CPP.cpp.html" class="tooltipped tooltipped-s permalink"><strong class="file-name js-selectable-text">BSTDeletion_CPP.cpp</strong></a>
+    </div>
+    <div class="actions">
+      <div class="button-group">
+        <a aria-label="View Raw" href="https://gist.github.com/mycodeschool/9465a188248b624afdbf/raw/6dc86fdf647f75904fcd4cb25e1bb61777f7e8a9/BSTDeletion_CPP.cpp" data-skip-pjax="" class="minibutton raw-url js-view-raw">Raw</a>
+      </div>
+    </div>
+  </div>
+  <div class="suppressed">
+    <a class="js-show-suppressed-file">File suppressed. Click to show.</a>
+  </div>
+  <div class="blob-wrapper data type-c js-blob-data">
+    
+
+
+
+    <div class="file-data">
+      <table cellpadding="0" cellspacing="0" class="lines highlight">
+        <tbody><tr>
+          <td class="line-numbers">
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L1" rel="file-bstdeletion_cpp-cpp-L1">1</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L2" rel="file-bstdeletion_cpp-cpp-L2">2</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L3" rel="file-bstdeletion_cpp-cpp-L3">3</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L4" rel="file-bstdeletion_cpp-cpp-L4">4</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L5" rel="file-bstdeletion_cpp-cpp-L5">5</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L6" rel="file-bstdeletion_cpp-cpp-L6">6</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L7" rel="file-bstdeletion_cpp-cpp-L7">7</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L8" rel="file-bstdeletion_cpp-cpp-L8">8</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L9" rel="file-bstdeletion_cpp-cpp-L9">9</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L10" rel="file-bstdeletion_cpp-cpp-L10">10</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L11" rel="file-bstdeletion_cpp-cpp-L11">11</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L12" rel="file-bstdeletion_cpp-cpp-L12">12</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L13" rel="file-bstdeletion_cpp-cpp-L13">13</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L14" rel="file-bstdeletion_cpp-cpp-L14">14</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L15" rel="file-bstdeletion_cpp-cpp-L15">15</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L16" rel="file-bstdeletion_cpp-cpp-L16">16</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L17" rel="file-bstdeletion_cpp-cpp-L17">17</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L18" rel="file-bstdeletion_cpp-cpp-L18">18</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L19" rel="file-bstdeletion_cpp-cpp-L19">19</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L20" rel="file-bstdeletion_cpp-cpp-L20">20</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L21" rel="file-bstdeletion_cpp-cpp-L21">21</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L22" rel="file-bstdeletion_cpp-cpp-L22">22</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L23" rel="file-bstdeletion_cpp-cpp-L23">23</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L24" rel="file-bstdeletion_cpp-cpp-L24">24</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L25" rel="file-bstdeletion_cpp-cpp-L25">25</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L26" rel="file-bstdeletion_cpp-cpp-L26">26</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L27" rel="file-bstdeletion_cpp-cpp-L27">27</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L28" rel="file-bstdeletion_cpp-cpp-L28">28</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L29" rel="file-bstdeletion_cpp-cpp-L29">29</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L30" rel="file-bstdeletion_cpp-cpp-L30">30</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L31" rel="file-bstdeletion_cpp-cpp-L31">31</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L32" rel="file-bstdeletion_cpp-cpp-L32">32</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L33" rel="file-bstdeletion_cpp-cpp-L33">33</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L34" rel="file-bstdeletion_cpp-cpp-L34">34</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L35" rel="file-bstdeletion_cpp-cpp-L35">35</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L36" rel="file-bstdeletion_cpp-cpp-L36">36</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L37" rel="file-bstdeletion_cpp-cpp-L37">37</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L38" rel="file-bstdeletion_cpp-cpp-L38">38</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L39" rel="file-bstdeletion_cpp-cpp-L39">39</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L40" rel="file-bstdeletion_cpp-cpp-L40">40</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L41" rel="file-bstdeletion_cpp-cpp-L41">41</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L42" rel="file-bstdeletion_cpp-cpp-L42">42</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L43" rel="file-bstdeletion_cpp-cpp-L43">43</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L44" rel="file-bstdeletion_cpp-cpp-L44">44</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L45" rel="file-bstdeletion_cpp-cpp-L45">45</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L46" rel="file-bstdeletion_cpp-cpp-L46">46</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L47" rel="file-bstdeletion_cpp-cpp-L47">47</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L48" rel="file-bstdeletion_cpp-cpp-L48">48</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L49" rel="file-bstdeletion_cpp-cpp-L49">49</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L50" rel="file-bstdeletion_cpp-cpp-L50">50</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L51" rel="file-bstdeletion_cpp-cpp-L51">51</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L52" rel="file-bstdeletion_cpp-cpp-L52">52</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L53" rel="file-bstdeletion_cpp-cpp-L53">53</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L54" rel="file-bstdeletion_cpp-cpp-L54">54</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L55" rel="file-bstdeletion_cpp-cpp-L55">55</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L56" rel="file-bstdeletion_cpp-cpp-L56">56</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L57" rel="file-bstdeletion_cpp-cpp-L57">57</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L58" rel="file-bstdeletion_cpp-cpp-L58">58</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L59" rel="file-bstdeletion_cpp-cpp-L59">59</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L60" rel="file-bstdeletion_cpp-cpp-L60">60</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L61" rel="file-bstdeletion_cpp-cpp-L61">61</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L62" rel="file-bstdeletion_cpp-cpp-L62">62</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L63" rel="file-bstdeletion_cpp-cpp-L63">63</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L64" rel="file-bstdeletion_cpp-cpp-L64">64</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L65" rel="file-bstdeletion_cpp-cpp-L65">65</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L66" rel="file-bstdeletion_cpp-cpp-L66">66</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L67" rel="file-bstdeletion_cpp-cpp-L67">67</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L68" rel="file-bstdeletion_cpp-cpp-L68">68</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L69" rel="file-bstdeletion_cpp-cpp-L69">69</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L70" rel="file-bstdeletion_cpp-cpp-L70">70</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L71" rel="file-bstdeletion_cpp-cpp-L71">71</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L72" rel="file-bstdeletion_cpp-cpp-L72">72</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L73" rel="file-bstdeletion_cpp-cpp-L73">73</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L74" rel="file-bstdeletion_cpp-cpp-L74">74</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L75" rel="file-bstdeletion_cpp-cpp-L75">75</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L76" rel="file-bstdeletion_cpp-cpp-L76">76</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L77" rel="file-bstdeletion_cpp-cpp-L77">77</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L78" rel="file-bstdeletion_cpp-cpp-L78">78</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L79" rel="file-bstdeletion_cpp-cpp-L79">79</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L80" rel="file-bstdeletion_cpp-cpp-L80">80</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L81" rel="file-bstdeletion_cpp-cpp-L81">81</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L82" rel="file-bstdeletion_cpp-cpp-L82">82</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L83" rel="file-bstdeletion_cpp-cpp-L83">83</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L84" rel="file-bstdeletion_cpp-cpp-L84">84</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L85" rel="file-bstdeletion_cpp-cpp-L85">85</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L86" rel="file-bstdeletion_cpp-cpp-L86">86</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L87" rel="file-bstdeletion_cpp-cpp-L87">87</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L88" rel="file-bstdeletion_cpp-cpp-L88">88</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L89" rel="file-bstdeletion_cpp-cpp-L89">89</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L90" rel="file-bstdeletion_cpp-cpp-L90">90</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L91" rel="file-bstdeletion_cpp-cpp-L91">91</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L92" rel="file-bstdeletion_cpp-cpp-L92">92</span>
+            <span class="line-number" id="file-bstdeletion_cpp-cpp-L93" rel="file-bstdeletion_cpp-cpp-L93">93</span>
+          </td>
+          <td class="line-data">
+            <pre class="line-pre"><div class="line" id="file-bstdeletion_cpp-cpp-LC1"><span class="pl-c">/* Deleting a node from Binary search tree */</span>
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC2">#<span class="pl-k">include</span><span class="pl-s1"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC3"><span class="pl-k">using</span> <span class="pl-st">namespace</span> <span class="pl-en">std</span><span class="pl-k">;</span>
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC4"><span class="pl-st">struct</span> <span class="pl-en">Node</span> {
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC5">	<span class="pl-st">int</span> data;
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC6">	<span class="pl-st">struct</span> <span class="pl-en">Node</span> *left;
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC7">	<span class="pl-st">struct</span> <span class="pl-en">Node</span> *right;
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC8">};
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC9"><span class="pl-c">//Function to find minimum in a tree. </span>
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC10">Node* <span class="pl-en">FindMin</span>(Node* root)
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC11">{
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC12">	<span class="pl-k">while</span>(root-&gt;left != <span class="pl-c1">NULL</span>) root = root-&gt;left;
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC13">	<span class="pl-k">return</span> root;
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC14">}
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC15">&nbsp;
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC16"><span class="pl-c">// Function to search a delete a value from tree.</span>
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC17"><span class="pl-st">struct</span> <span class="pl-en">Node</span>* <span class="pl-en">Delete</span>(<span class="pl-st">struct</span> <span class="pl-en">Node</span> *root, <span class="pl-st">int</span> data) {
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC18">	<span class="pl-k">if</span>(root == <span class="pl-c1">NULL</span>) <span class="pl-k">return</span> root; 
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC19">	<span class="pl-k">else</span> <span class="pl-k">if</span>(data &lt; root-&gt;data) root-&gt;left = <span class="pl-s3">Delete</span>(root-&gt;left,data);
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC20">	<span class="pl-k">else</span> <span class="pl-k">if</span> (data &gt; root-&gt;data) root-&gt;right = <span class="pl-s3">Delete</span>(root-&gt;right,data);
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC21">	<span class="pl-c">// Wohoo... I found you, Get ready to be deleted	</span>
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC22">	<span class="pl-k">else</span> {
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC23">		<span class="pl-c">// Case 1:  No child</span>
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC24">		<span class="pl-k">if</span>(root-&gt;left == <span class="pl-c1">NULL</span> &amp;&amp; root-&gt;right == <span class="pl-c1">NULL</span>) { 
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC25">			<span class="pl-k">delete</span> root;
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC26">			root = <span class="pl-c1">NULL</span>;
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC27">		}
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC28">		<span class="pl-c">//Case 2: One child </span>
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC29">		<span class="pl-k">else</span> <span class="pl-k">if</span>(root-&gt;left == <span class="pl-c1">NULL</span>) {
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC30">			<span class="pl-st">struct</span> <span class="pl-en">Node</span> *temp = root;
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC31">			root = root-&gt;right;
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC32">			<span class="pl-k">delete</span> temp;
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC33">		}
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC34">		<span class="pl-k">else</span> <span class="pl-k">if</span>(root-&gt;right == <span class="pl-c1">NULL</span>) {
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC35">			<span class="pl-st">struct</span> <span class="pl-en">Node</span> *temp = root;
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC36">			root = root-&gt;left;
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC37">			<span class="pl-k">delete</span> temp;
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC38">		}
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC39">		<span class="pl-c">// case 3: 2 children</span>
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC40">		<span class="pl-k">else</span> { 
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC41">			<span class="pl-st">struct</span> <span class="pl-en">Node</span> *temp = <span class="pl-s3">FindMin</span>(root-&gt;right);
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC42">			root-&gt;data = temp-&gt;data;
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC43">			root-&gt;right = <span class="pl-s3">Delete</span>(root-&gt;right,temp-&gt;data);
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC44">		}
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC45">	}
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC46">	<span class="pl-k">return</span> root;
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC47">}
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC48"> 
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC49"><span class="pl-c">//Function to visit nodes in Inorder</span>
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC50"><span class="pl-st">void</span> <span class="pl-en">Inorder</span>(Node *root) {
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC51">	<span class="pl-k">if</span>(root == <span class="pl-c1">NULL</span>) <span class="pl-k">return</span>;
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC52"> 
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC53">	<span class="pl-s3">Inorder</span>(root-&gt;left);       <span class="pl-c">//Visit left subtree</span>
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC54">	<span class="pl-s3">printf</span>(<span class="pl-s1"><span class="pl-pds">"</span><span class="pl-c1">%d</span> <span class="pl-pds">"</span></span>,root-&gt;data);  <span class="pl-c">//Print data</span>
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC55">	<span class="pl-s3">Inorder</span>(root-&gt;right);      <span class="pl-c">// Visit right subtree</span>
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC56">}
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC57"> 
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC58"><span class="pl-c">// Function to Insert Node in a Binary Search Tree</span>
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC59">Node* <span class="pl-en">Insert</span>(Node *root,<span class="pl-st">char</span> data) {
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC60">	<span class="pl-k">if</span>(root == <span class="pl-c1">NULL</span>) {
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC61">		root = <span class="pl-k">new</span> <span class="pl-s3">Node</span>();
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC62">		root-&gt;data = data;
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC63">		root-&gt;left = root-&gt;right = <span class="pl-c1">NULL</span>;
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC64">	}
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC65">	<span class="pl-k">else</span> <span class="pl-k">if</span>(data &lt;= root-&gt;data)
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC66">		root-&gt;left = <span class="pl-s3">Insert</span>(root-&gt;left,data);
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC67">	<span class="pl-k">else</span> 
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC68">		root-&gt;right = <span class="pl-s3">Insert</span>(root-&gt;right,data);
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC69">	<span class="pl-k">return</span> root;
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC70">}
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC71">&nbsp;
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC72"><span class="pl-st">int</span> <span class="pl-en">main</span>() {
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC73">	<span class="pl-c">/*Code To Test the logic</span>
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC74"><span class="pl-c">	  Creating an example tree</span>
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC75"><span class="pl-c">	                    5</span>
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC76"><span class="pl-c">			   / \</span>
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC77"><span class="pl-c">			  3   10</span>
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC78"><span class="pl-c">			 / \   \</span>
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC79"><span class="pl-c">			1   4   11</span>
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC80"><span class="pl-c">    */</span>
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC81">	Node* root = <span class="pl-c1">NULL</span>;
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC82">	root = <span class="pl-s3">Insert</span>(root,<span class="pl-c1">5</span>); root = <span class="pl-s3">Insert</span>(root,<span class="pl-c1">10</span>);
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC83">	root = <span class="pl-s3">Insert</span>(root,<span class="pl-c1">3</span>); root = <span class="pl-s3">Insert</span>(root,<span class="pl-c1">4</span>); 
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC84">	root = <span class="pl-s3">Insert</span>(root,<span class="pl-c1">1</span>); root = <span class="pl-s3">Insert</span>(root,<span class="pl-c1">11</span>);
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC85">&nbsp;
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC86">	<span class="pl-c">// Deleting node with value 5, change this value to test other cases</span>
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC87">	root = <span class="pl-s3">Delete</span>(root,<span class="pl-c1">5</span>);
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC88">&nbsp;
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC89">	<span class="pl-c">//Print Nodes in Inorder</span>
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC90">	cout&lt;&lt;<span class="pl-s1"><span class="pl-pds">"</span>Inorder: <span class="pl-pds">"</span></span>;
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC91">	<span class="pl-s3">Inorder</span>(root);
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC92">	cout&lt;&lt;<span class="pl-s1"><span class="pl-pds">"</span><span class="pl-cce">\n</span><span class="pl-pds">"</span></span>;
+</div><div class="line" id="file-bstdeletion_cpp-cpp-LC93">}
+</div></pre>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+
+  </div>
+</div>
+
+
+        <div class="discussion-timeline js-quote-selection-container">
+
+          <div class="js-discussion">
+            
+<div class="timeline-comment-wrapper js-comment-container">
+  <a href="https://gist.github.com/sidhjhawar"><img class="timeline-comment-avatar" src="./BSTDeletion_CPP.cpp_files/4991373" width="48" height="48"></a>
+  <div class="timeline-comment ">
+    <div id="comment-1221886" class="comment js-comment js-task-list-container" data-body-version="0907ae89e3292fe4744f0eac0742b65e">
+      <div class="timeline-comment-header">
+
+
+
+        <div class="timeline-comment-header-text">
+          <strong>
+            <a class="author" href="https://gist.github.com/sidhjhawar">sidhjhawar</a>
+          </strong>
+
+          commented
+
+            <a href="https://gist.github.com/mycodeschool/9465a188248b624afdbf#comment-1221886" class="timestamp"><time datetime="2014-05-03T02:26:10Z" is="relative-time" title="May 2, 2014, 8:26 PM MDT">on May 2, 2014</time></a>
+        </div>
+      </div>
+
+    <div class="comment-content">
+
+      <div class="edit-comment-hide">
+        <div class="comment-body markdown-body  js-comment-body">
+            <p>Hi, How are you making sure that once the node to be is deleted is deleted and the link to its parent is still maintained  now between the child of the node deleted and its parent ?<br>
+More specifically,<br>
+else if(root-&gt;left == NULL) {<br>
+            struct Node *temp = root;<br>
+            root = root-&gt;right;<br>
+            delete temp;<br>
+}</p>
+
+<p>After deleting the temp, what about the link between temp's parent and current root ? I am little confused here.<br>
+Please explain if I am wrong.<br>
+Thanks,<br>
+Sidharth</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+  </div>
+
+<div class="timeline-comment-wrapper js-comment-container">
+  <a href="https://gist.github.com/Merciaugust29"><img class="timeline-comment-avatar" src="./BSTDeletion_CPP.cpp_files/5781881" width="48" height="48"></a>
+  <div class="timeline-comment ">
+    <div id="comment-1282443" class="comment js-comment js-task-list-container" data-body-version="6868dc262b82ed4db7edd1e8e4b7aee0">
+      <div class="timeline-comment-header">
+
+
+
+        <div class="timeline-comment-header-text">
+          <strong>
+            <a class="author" href="https://gist.github.com/Merciaugust29">Merciaugust29</a>
+          </strong>
+
+          commented
+
+            <a href="https://gist.github.com/mycodeschool/9465a188248b624afdbf#comment-1282443" class="timestamp"><time datetime="2014-08-15T16:57:36Z" is="relative-time" title="Aug 15, 2014, 10:57 AM MDT">on Aug 15, 2014</time></a>
+        </div>
+      </div>
+
+    <div class="comment-content">
+
+      <div class="edit-comment-hide">
+        <div class="comment-body markdown-body  js-comment-body">
+            <p>I have the same issue. I thought that deleting a node with one child, we are supposed to find the parent, and link the parent to the child of the node to be deleted. You are just making the node to be deleted point to his child, and delete the node. Does that automatically make the parent of the node to be deleted point to the child of the node to be deleted? If so how does that work? Can you please clarify?</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+  </div>
+
+<div class="timeline-comment-wrapper js-comment-container">
+  <a href="https://gist.github.com/hhuynh"><img class="timeline-comment-avatar" src="./BSTDeletion_CPP.cpp_files/1121010" width="48" height="48"></a>
+  <div class="timeline-comment ">
+    <div id="comment-1312452" class="comment js-comment js-task-list-container" data-body-version="0aaf01ea350db8a5239678d3591f970b">
+      <div class="timeline-comment-header">
+
+
+
+        <div class="timeline-comment-header-text">
+          <strong>
+            <a class="author" href="https://gist.github.com/hhuynh">hhuynh</a>
+          </strong>
+
+          commented
+
+            <a href="https://gist.github.com/mycodeschool/9465a188248b624afdbf#comment-1312452" class="timestamp"><time datetime="2014-10-05T16:35:01Z" is="relative-time" title="Oct 5, 2014, 10:35 AM MDT">on Oct 5, 2014</time></a>
+        </div>
+      </div>
+
+    <div class="comment-content">
+
+      <div class="edit-comment-hide">
+        <div class="comment-body markdown-body  js-comment-body">
+            <p>to @sidhjhawar and @Merciaugust29,</p>
+
+<p>That's why the Delete function has a return statement. It's returning the same node that's being deleted, which is most of the time is NULL. </p>
+
+<p>For example, let say we're deleting node 11. A recursive function ended up in node 10, line 20. The root in this context is the node 10 itself. </p>
+
+<p>line 20:    root(node10)-&gt;right = Delete(root-&gt;right(node11),  11)</p>
+
+<p>Here, the Delete function is called again and the root in this context become node 11. Since node 11 has no child, the logic ends up on line 24. The root is deleted and set to NULL.</p>
+
+<p>This NULL value is then returned to the earlier call we had above:</p>
+
+<p>back to line 20:  root(node10)-&gt;right = NULL;</p>
+
+<p>So effectively, from node 10 perspective, node 11 is truly gone.</p>
+
+<p>You could argue with the same logic for any other cases.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+  </div>
+
+<div class="timeline-comment-wrapper js-comment-container">
+  <a href="https://gist.github.com/NLababidi"><img class="timeline-comment-avatar" src="./BSTDeletion_CPP.cpp_files/7886071" width="48" height="48"></a>
+  <div class="timeline-comment ">
+    <div id="comment-1356331" class="comment js-comment js-task-list-container" data-body-version="cf65e2a7cc192f0df6f5d5649ec43825">
+      <div class="timeline-comment-header">
+
+
+
+        <div class="timeline-comment-header-text">
+          <strong>
+            <a class="author" href="https://gist.github.com/NLababidi">NLababidi</a>
+          </strong>
+
+          commented
+
+            <a href="https://gist.github.com/mycodeschool/9465a188248b624afdbf#comment-1356331" class="timestamp"><time datetime="2014-12-15T03:01:32Z" is="relative-time" title="Dec 14, 2014, 8:01 PM MST">on Dec 14, 2014</time></a>
+        </div>
+      </div>
+
+    <div class="comment-content">
+
+      <div class="edit-comment-hide">
+        <div class="comment-body markdown-body  js-comment-body">
+            <p>Very Clean and helpful code. Thank You,</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+  </div>
+
+<div class="timeline-comment-wrapper js-comment-container">
+  <a href="https://gist.github.com/samarpanda"><img class="timeline-comment-avatar" src="./BSTDeletion_CPP.cpp_files/802163" width="48" height="48"></a>
+  <div class="timeline-comment ">
+    <div id="comment-1445039" class="comment js-comment js-task-list-container" data-body-version="51e3d7c9e2ebf44951fe4274731ade81">
+      <div class="timeline-comment-header">
+
+
+
+        <div class="timeline-comment-header-text">
+          <strong>
+            <a class="author" href="https://gist.github.com/samarpanda">samarpanda</a>
+          </strong>
+
+          commented
+
+            <a href="https://gist.github.com/mycodeschool/9465a188248b624afdbf#comment-1445039" class="timestamp"><time datetime="2015-05-02T14:48:02Z" is="relative-time" title="May 2, 2015, 8:48 AM MDT">on May 2</time></a>
+        </div>
+      </div>
+
+    <div class="comment-content">
+
+      <div class="edit-comment-hide">
+        <div class="comment-body markdown-body  js-comment-body">
+            <p>May be a small thing. While running the above program i get this error</p>
+
+<div class="highlight highlight-cmd"><pre>root@runnable:~# g++ /root/main.cpp 
+/root/main.cpp: In function 'void Inorder(Node*)':                                                                            
+/root/main.cpp:44:26: error: 'printf' was not declared in this scope </pre></div>
+
+<p>I think we need to include <code>#include&lt;cstdio&gt;</code>. It compiles without any error after adding the package.</p>
+
+<div class="highlight highlight-cmd"><pre>root@runnable:~# g++ /root/main.cpp                                                                                           
+root@runnable:~# /root/a.out                                                                                                  
+Inorder: 1 3 4 10 11 </pre></div>
+
+<p>You can checkout the code in runnable <a href="http://goo.gl/IGvNCF" rel="noreferrer">link</a></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+  </div>
+
+          </div>
+
+          <div class="discussion-timeline-actions">
+              <div class="signed-out-comment">
+	<a class="button primary" href="https://github.com/signup?return_to=gist" rel="nofollow">Sign up for free</a>
+	<strong>to join this conversation on GitHub</strong>.
+	Already have an account?
+  <a href="https://gist.github.com/login?return_to=%2Fmycodeschool%2F9465a188248b624afdbf" rel="nofollow">Sign in to comment</a>
+</div>
+
+
+          </div>
+        </div><!-- /.discussion-timeline -->
+      </div><!-- /.gist-content -->
+    </div>
+  </div>
+</div><!-- /.container -->
+
+  <div class="context-overlay"></div>
+</div>
+
+    </div>
+    <div class="slow-loading-overlay"></div>
+  </div>
+
+  <div id="ajax-error-message" class="flash flash-error">
+    <div class="container">
+      <span class="octicon octicon-alert"></span>
+      Something went wrong with that request. Please try again.
+      <a href="https://gist.github.com/mycodeschool/9465a188248b624afdbf#" class="octicon octicon-x ajax-error-dismiss"></a>
+    </div>
+  </div>
+
+
+  <footer>
+    <div class="container">
+  <div class="site-footer">
+    <ul class="site-footer-links right">
+      <li><a href="https://status.github.com/">Status</a></li>
+      <li><a href="http://developer.github.com/">API</a></li>
+      <li><a href="https://github.com/blog">Blog</a></li>
+      <li><a href="https://github.com/about">About</a></li>
+
+    </ul>
+
+    <a href="https://gist.github.com/">
+      <span class="mega-octicon octicon-mark-github" title="GitHub "></span>
+    </a>
+
+    <ul class="site-footer-links">
+      <li>© 2015 <span title="0.03578s from github-fe102-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+        <li><a href="https://github.com/site/terms">Terms</a></li>
+        <li><a href="https://github.com/site/privacy">Privacy</a></li>
+        <li><a href="https://github.com/security">Security</a></li>
+        <li><a href="https://github.com/contact">Contact</a></li>
+    </ul>
+  </div><!-- /.site-footer -->
+</div><!-- /.container -->
+
+  </footer>
+
+  <div class="fullscreen-overlay js-fullscreen-overlay" id="fullscreen_overlay">
+  <div class="fullscreen-container js-fullscreen-container">
+    <div class="textarea-wrap">
+      <textarea name="fullscreen-contents" id="fullscreen-contents" class="fullscreen-contents js-fullscreen-contents" placeholder="" data-suggester="fullscreen_suggester"></textarea>
+        <div class="suggester-container">
+            <div class="suggester fullscreen-suggester js-navigation-container" id="fullscreen_suggester" data-url="/mycodeschool/9465a188248b624afdbf/suggestions">
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="fullscreen-sidebar">
+    <a href="https://gist.github.com/mycodeschool/9465a188248b624afdbf#" class="exit-fullscreen js-exit-fullscreen tooltipped tooltipped-w" aria-label="Exit Zen Mode">
+      <span class="mega-octicon octicon-screen-normal"></span>
+    </a>
+    <a href="https://gist.github.com/mycodeschool/9465a188248b624afdbf#" class="theme-switcher js-theme-switcher tooltipped tooltipped-w" aria-label="Switch themes">
+      <span class="octicon octicon-color-mode"></span>
+    </a>
+  </div>
+</div>
+
+
+
+
+<div id="global-zeroclipboard-html-bridge" class="global-zeroclipboard-container" style="position: absolute; left: 0px; top: -9999px; width: 1px; height: 1px; z-index: 999999999;"><object id="global-zeroclipboard-flash-bridge" name="global-zeroclipboard-flash-bridge" width="100%" height="100%" type="application/x-shockwave-flash" data="https://gist-assets.github.com/assets/zeroclipboard/dist/ZeroClipboard-aeb54c213f0d09883fed5a0947132da9.swf"><param name="allowScriptAccess" value="always"><param name="allowNetworking" value="all"><param name="menu" value="false"><param name="wmode" value="transparent"><param name="flashvars" value="trustedOrigins=gist.github.com%2C%2F%2Fgist.github.com%2Chttps%3A%2F%2Fgist.github.com&amp;swfObjectId=global-zeroclipboard-flash-bridge"></object></div></body></html>

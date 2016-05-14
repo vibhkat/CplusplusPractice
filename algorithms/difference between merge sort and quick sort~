@@ -1,0 +1,8 @@
+merge sort is a stable sorting algorithm i.e. relative position of the members is retained which may or may not happen in case of quicksort algorithm..
+merge sort requires extra space from memory..which can lead to overflow sometimes,quicksort on the other hand is an in-place sorting algorithm.. although both have a time complexity of O(nlog(n)),quicksort can have a degradation if pivot is not chosen properly which may lead to a time complexity of O(n^2).. this is avoided by using a randomized version of quicksort algorithm.
+
+
+1)Quick Sort  does sorting of elements in place, i.e  it does not require any extra space whereas Merge sort requires extra apace for sorting.
+ 
+2)In Merge sort pivot element is always the middle (nearly middle) element but in quick sort we can take either the first element as pivot, or the last element as pivot or the middle element an pivot.
+In some cases we take random elements as pivot it is RANDOMIZED VERSION OF QUICK SORT.

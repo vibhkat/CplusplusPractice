@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!-- saved from url=(0177)http://z.about.com/5g/dc/shareoverlay_frame.html?PG=http%3a%2f%2flinux%2eabout%2ecom%2flibrary%2fcmd%2fblcmdl1%5far%2ehtm&zItl=&zIhttp&SITE_DIR_NAME=linux&SDPN=Linux&CDN=compute -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><link rel="stylesheet" href="http://0.tqn.com/0g/dc/s.css?v=2&t=2" media="all"><style type="text/css"></style></head>
+    <body>
+        <div id="sharepage">
+            <div id="sharemail">
+                <form id="shareform" method="post" name="ShareSite" action="http://apps.about.com/cgi-bin/apps/sharesite/ss.cgi">
+                    <input type="hidden" name="url" value="http://linux.about.com/library/cmd/blcmdl1_ar.htm?r=et">
+                    <input type="hidden" name="title" value="">
+                    <input type="hidden" name="sitedirname" value="linux">
+                    <input type="hidden" name="sitedisplayname" value="Linux">
+                    <input type="hidden" name="chan" value="compute">
+                    <br>  
+                    <div class="line">          
+                        <div class="l-col"><label for="sentto">Recipient's email: </label></div>
+                        <div class="r-col">
+                            <input id="sentto" type="text" name="sentto" maxlength="270" validate="required">
+                            <p><span class="graytxt">Separate multiple addresses with commas. Limited to 10 recipients. We will not share any of the email addresses on this form with third parties.</span></p>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <div class="l-col"><label for="name">Your name: </label></div>
+                        <div class="r-col">
+                            <input id="name" type="text" name="name" maxlength="100" validate="required">
+                        </div>
+                    </div>
+                    <div class="line">
+                        <div class="l-col"><label for="sentfrom">Your email: </label></div>
+                        <div class="r-col"><input id="sentfrom" type="text" name="sentfrom" maxlength="100" validate="email"></div>
+                    </div>
+                    <div class="line">
+                        <div class="l-col"><label for="comment">Your comments: </label><div class="graytxt shareopt">(optional)</div></div>
+                        <div class="r-col bottom">
+                            <textarea id="comment" name="comment" rows="3" cols="30" wrap="" validate="minmax" range="0,300" maxlength="300" counter="1"></textarea>
+                            <p id="comment_max" class="maxinfo alert"><span id="char_limit">300</span><span id="char_text">-character limit</span></p>
+                            <div class="sharesub"><input id="submit_form" type="submit" value="Send" style="width:70px;"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script>document.domain = "about.com";</script>
+    
+
+
+<script>
+(function() {
+    var overlay = (function() {
+        var inputs = [],
+            email_check = /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/i,
+            share_form = document.getElementById('shareform'),
+            sent_to = document.getElementById('sentto'),
+            char_limit = document.getElementById('char_limit'),
+            char_text = document.getElementById('char_text'),
+            comment = document.getElementById('comment'),
+            input_elements = share_form.getElementsByTagName('input');
+        
+        function formSubmit(e) {
+            var i,
+                validation,
+                error_msg = '';
+
+            if(e.preventDefault) {
+                e.preventDefault();
+            }
+            else {
+                e.returnValue = false;
+            }
+
+            for(i = 0; i < inputs.length; i++) {
+                validation = inputs[i].attributes.validate;
+                if(validation) {
+                    if(validation.value == 'required' && inputs[i].value == '') {
+                        error_msg = 'This field is required.';
+                    }
+                    else if(validation.value == 'email' && !email_check.test(inputs[i].value)) {
+                        error_msg = 'Please enter a valid email address.';
+                    }
+                    else if(validation.value == 'minmax' && inputs[i].value.length > 300) {
+                        error_msg = 'Your entry must be less than 300 characters.';
+                    }
+
+                    if(error_msg != '') {
+                        inputs[i].className = 'invalid';
+                        inputs[i].focus();
+                        parent.shareOverlay.unbind();
+                        alert(error_msg);
+                        return;
+                    }
+                    else {
+                        inputs[i].className = '';
+                    }
+                }
+            }
+
+            parent.shareOverlay.onFormSubmit(sent_to.value);
+            share_form.submit();
+        }
+
+        function updateCharCount() {
+            charsRemaining = 300 - comment.value.length;
+            if(charsRemaining > 0) {
+                char_limit.innerHTML = charsRemaining;
+                char_text.innerHTML = '&nbsp;characters left';
+            }
+            else {
+                char_limit.innerHTML = '';
+                char_text.innerHTML = 'You have reached the character limit';   
+            }
+        }
+
+        function attachEvents() {
+            parent.addEventSimple(share_form, 'submit', formSubmit);
+            parent.addEventSimple(comment, 'keyup', updateCharCount);
+        }
+
+        return {
+            init: function() {
+                for(var i = 0; i < input_elements.length; i++) {
+                    inputs.push(input_elements[i]);
+                }
+                inputs.push(comment);
+                attachEvents();
+            }
+        }
+    })();
+
+    var eventName = document.addEventListener ? 'DOMContentLoaded' : 'readystatechange';
+    parent.addEventSimple(document, eventName, function() {
+        if(eventName == 'DOMContentLoaded' || (eventName == 'readystatechange' && document.readyState == 'complete')) {
+            overlay.init();
+        }
+    });
+})();
+</script>
+
+<style>
+body {
+    background-color: white;
+    text-align: left;
+    border: 0;
+}
+#shareform textarea {
+    width: 96%;
+}
+#shareform div {
+    margin-bottom: 1.5em;
+}
+
+#shareform .sharesub {
+    margin-bottom: 0;
+}
+#sharemail {
+    background-color: white !important;
+    margin: 0 !important;
+}
+</style></body></html>

@@ -1,0 +1,1 @@
+PARSELY.pInit({"apikey":"about.com","settings":{"debug":false,"widget":false,"tracker":true},"customizations":null,"track_ip_addresses":true,"bundle":"/code/ptrack-v0.4.2.js","track_third_party_cookies":true,"uuid":"ec43fc6c-a54a-4f86-b25c-5276b87ef2d7","network_uuid":"ae43ee03-e816-4a9f-a847-9402d268caba","apikey_uuid":"ec43fc6c-a54a-4f86-b25c-5276b87ef2d7"});

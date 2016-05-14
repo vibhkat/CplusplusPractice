@@ -1,0 +1,32 @@
+merge sort is a stable sorting algorithm i.e. relative position of the members is retained which may or may not happen in case of quicksort algorithm..
+merge sort requires extra space from memory..which can lead to overflow sometimes,quicksort on the other hand is an in-place sorting algorithm.. although both have a time complexity of O(nlog(n)),quicksort can have a degradation if pivot is not chosen properly which may lead to a time complexity of O(n^2).. this is avoided by using a randomized version of quicksort algorithm.
+
+
+1)Quick Sort  does sorting of elements in place, i.e  it does not require any extra space whereas Merge sort requires extra apace for sorting.
+ 
+2)In Merge sort pivot element is always the middle (nearly middle) element but in quick sort we can take either the first element as pivot, or the last element as pivot or the middle element an pivot.
+In some cases we take random elements as pivot it is RANDOMIZED VERSION OF QUICK SORT.
+
+
+Both use Divide and conquer strategy.
+
+But the differences are
+
+Quick sort is an IN-PLACE Algorithm while Merge sort is not.
+
+It means that Quick sort does not require any additional memory while executing. It just sorts everything in the very array where the unsorted elements are present. Whereas Merge sort requires extra memory (a lot of memory if the array is large). And the amount of extra memory required is Big-Oh(n) which means it is directly proportional to the input size n. 
+
+2.  Quick Sort is NOT a stable sorting algorithm while Merge is.
+
+A Sorting algorithm is called stable if it preserves the order of occurance of elements in the unsorted array. 
+For example if I have
+A= (1,4),(2.5),(7,2),(2,3),(8,1) as some x and y coordinates. And if I have to sort them with increasing order of x coordinate then a stable sort would sort them as 
+
+(1,4),(2,5),(2,3),(7,2),(7,8)
+
+Quick sort is not stable because it exchanges the non adjacent elements. So preservance of order is not taken care of. The result might be stable or unstable. While Merge is a stable sort.
+
+Quick sort is likely to run 1.2 to 1.4 times faster than Merge sort. It is always a good choice to use Quick over merge if Stability is not required.
+Moreover a good implementation of Quick sort is easier to code than a good implantation of Merge sort.
+
+Allthough QuickSort's worse case of running time is Big-oh(n^2) but it is always avoided using a randomized version of quick sort.
